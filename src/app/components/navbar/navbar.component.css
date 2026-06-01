@@ -1,0 +1,192 @@
+.navbar {
+
+  position: sticky;
+  top: 0;
+
+  z-index: 999;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 22px 50px;
+
+  background:
+  rgba(10,10,10,.95);
+
+  backdrop-filter:
+  blur(10px);
+
+  border-bottom:
+  1px solid #1f1f1f;
+
+  box-shadow:
+  0 5px 20px
+  rgba(0,0,0,.4);
+}
+
+/* LOGO */
+
+.logo {
+
+  font-size: 52px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.logo:hover {
+
+  transform:
+  scale(1.03);
+
+  color: #e5e5e5;
+}
+
+/* LINKS */
+
+.nav-links {
+
+  display: flex;
+
+  gap: 45px;
+}
+
+.nav-links a {
+
+  position: relative;
+
+  text-decoration: none;
+
+  color: #a1a1a1;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.nav-links a:hover {
+
+  color: white;
+}
+
+/* línea animada */
+
+.nav-links a::after {
+
+  content: '';
+
+  position: absolute;
+
+  bottom: -8px;
+  left: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background: white;
+
+  transition: .3s;
+}
+
+.nav-links a:hover::after {
+
+  width: 100%;
+}
+
+/* activo */
+
+.activo {
+
+  color: white !important;
+}
+
+.activo::after {
+
+  width: 100% !important;
+}
+
+/* carrito */
+
+.cart-icon {
+
+  position: relative;
+
+  font-size: 34px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.cart-icon:hover {
+
+  transform:
+  scale(1.08);
+}
+
+.cart-count {
+
+  position: absolute;
+
+  top: -8px;
+  right: -12px;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: red;
+
+  color: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 13px;
+
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media
+(max-width: 768px) {
+
+  .navbar {
+
+    padding:
+    20px;
+  }
+
+  .logo {
+
+    font-size: 32px;
+  }
+
+  .nav-links {
+
+    gap: 20px;
+  }
+
+  .nav-links a {
+
+    font-size: 16px;
+  }
+}

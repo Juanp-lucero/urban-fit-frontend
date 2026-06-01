@@ -1,0 +1,39 @@
+<nav class="navbar">
+
+  <!-- LOGO -->
+  <div class="logo">
+
+    URBAN FIT
+
+  </div>
+
+  <!-- MENÚ -->
+  <div class="nav-links">
+
+    <a
+      routerLink="/"
+      routerLinkActive="active">
+
+      Inicio
+
+    </a>
+
+  </div>
+
+  <!-- CARRITO -->
+  <div
+    class="cart-icon"
+    (click)="toggleCart()">
+
+    🛒
+
+    <span
+      class="cart-count">
+
+      {{ cartCount() }}
+
+    </span>
+
+  </div>
+
+</nav>

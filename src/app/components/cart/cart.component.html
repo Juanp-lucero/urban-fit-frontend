@@ -1,0 +1,221 @@
+<div
+  class="overlay"
+
+  *ngIf="
+    cartService
+    .cartOpen()
+  "
+
+  (click)="
+    cartService
+    .toggleCart()
+  "
+></div>
+
+<div
+  class="cart-container"
+
+  *ngIf="
+    cartService
+    .cartOpen()
+  "
+>
+
+  <div class="top">
+
+    <h2>
+      🛒 Mi carrito
+    </h2>
+
+    <button
+      class="close"
+
+      (click)="
+        cartService
+        .toggleCart()
+      "
+    >
+      ✕
+    </button>
+
+  </div>
+
+  <div
+    class="empty"
+
+    *ngIf="
+      cartService
+      .items()
+      .length === 0
+    "
+  >
+
+    Carrito vacío 😭
+
+  </div>
+
+  <div
+    class="producto"
+
+    *ngFor="
+      let producto
+      of cartService.items()
+    "
+  >
+
+    <img
+      [src]="
+        producto.imagenUrl
+      "
+
+      [alt]="
+        producto.nombre
+      "
+    >
+
+    <div class="info">
+
+      <h3>
+        {{ producto.nombre }}
+      </h3>
+
+      <h4>
+        ${{ producto.precio }}
+      </h4>
+
+      <p>
+
+        Stock:
+        {{ producto.stock }}
+
+      </p>
+
+      <!-- TALLA -->
+
+      <div
+        class="talla-box"
+      >
+
+        <label>
+          Talla
+        </label>
+
+        <select
+          [(ngModel)]="
+            producto
+            .tallaSeleccionada
+          "
+        >
+
+          <option
+            value=""
+          >
+            Seleccionar
+          </option>
+
+          <option value="S">
+            S
+          </option>
+
+          <option value="M">
+            M
+          </option>
+
+          <option value="L">
+            L
+          </option>
+
+          <option value="XL">
+            XL
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- CANTIDAD -->
+
+      <div
+        class="cantidad"
+      >
+
+        <button
+
+          (click)="
+            cartService
+            .decreaseQuantity(
+              producto.id
+            )
+          "
+        >
+          -
+        </button>
+
+        <span>
+
+          {{
+            producto.cantidad
+          }}
+
+        </span>
+
+        <button
+
+          (click)="
+            cartService
+            .increaseQuantity(
+              producto.id
+            )
+          "
+        >
+          +
+        </button>
+
+      </div>
+
+      <button
+        class="eliminar"
+
+        (click)="
+          remove(
+            producto.id
+          )
+        "
+      >
+
+        Eliminar
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <hr>
+
+  <h3 class="total">
+
+    Total:
+    ${{ total() }}
+
+  </h3>
+
+  <button
+    class="vaciar"
+
+    (click)="clear()">
+
+    Vaciar carrito
+
+  </button>
+
+  <button
+    class="comprar"
+
+    (click)="comprar()">
+
+    Comprar ahora
+
+  </button>
+
+</div>

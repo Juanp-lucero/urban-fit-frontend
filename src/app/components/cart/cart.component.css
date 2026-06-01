@@ -1,0 +1,242 @@
+.overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,.5);
+
+  z-index: 9998;
+}
+
+.cart-container {
+
+  position: fixed;
+
+  right: 0;
+  top: 0;
+
+  width: 420px;
+
+  height: 100vh;
+
+  background: #111;
+
+  color: white;
+
+  padding: 25px;
+
+  overflow-y: auto;
+
+  z-index: 9999;
+
+  box-shadow:
+    -10px 0 30px
+    rgba(0,0,0,.5);
+
+  animation:
+    slide .3s ease;
+}
+
+@keyframes slide {
+
+  from {
+    transform:
+      translateX(100%);
+  }
+
+  to {
+    transform:
+      translateX(0);
+  }
+}
+
+.top {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.close {
+
+  background: transparent;
+
+  color: white;
+
+  border: none;
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+.producto {
+
+  background: #1d1d1d;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-bottom: 20px;
+
+  padding-bottom: 20px;
+}
+
+.producto img {
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+}
+
+.info {
+
+  padding: 20px;
+}
+
+.cantidad {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 15px;
+}
+
+.cantidad button {
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+.eliminar {
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  background: red;
+
+  color: white;
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+.total {
+
+  font-size: 40px;
+
+  font-weight: bold;
+
+  margin-top: 30px;
+}
+
+.vaciar {
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  border: none;
+
+  background: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.comprar {
+
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.comprar:hover {
+
+  transform:
+  scale(1.02);
+
+  background:
+  #15803d;
+}
+
+.talla-box {
+
+  margin: 15px 0;
+}
+
+.talla-box label {
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: bold;
+}
+
+.talla-box select {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  background: #222;
+
+  color: white;
+
+  font-size: 15px;
+}

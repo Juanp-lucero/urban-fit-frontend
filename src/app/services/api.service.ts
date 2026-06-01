@@ -1,17 +1,9 @@
-import { Injectable }
-from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import {
-  HttpClient
-} from '@angular/common/http';
-
-import {
-  Observable
-} from 'rxjs';
-
-import {
-  Product
-} from '../models/product.model';
+import { Product }
+from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +21,7 @@ export class ApiService {
   obtenerProductos():
   Observable<Product[]> {
 
-    return this.http.get<
-      Product[]
-    >(
+    return this.http.get<Product[]>(
       `${this.apiUrl}/productos`
     );
   }
@@ -41,18 +31,14 @@ export class ApiService {
   ) {
 
     return this.http.post(
-
       `${this.apiUrl}/pedidos`,
-
       pedido
     );
   }
 
   obtenerPedidos() {
 
-    return this.http.get<
-      any[]
-    >(
+    return this.http.get<any[]>(
       `${this.apiUrl}/pedidos`
     );
   }
